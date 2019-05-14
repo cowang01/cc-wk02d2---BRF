@@ -16,9 +16,7 @@ class BearTest < MiniTest::Test
     @fishy4 = Fish.new("Loc")
 
     @bear_1 = Bear.new("Yogi", "Brown")
-    # @river_a = River.new("The Blue")
-    #
-    # @river_a.fish = [@fishy1, @fishy2, @fishy3, @fishy4]
+
   end
 
 
@@ -27,12 +25,21 @@ class BearTest < MiniTest::Test
     assert_equal("Yogi", @bear_1.name)
   end
 
-  # def test_eats_fish
-  #   @bear_1.eats_fish(@fishy2)
-  #   @bear_1.eats_fish(@fishy3)
-  #   assert_equal(2, @bear_1.stomach.size())
-  #   assert_equal(2, @river_a.fish.size())
-  # end
+  def test_eats_fish
+    @bear_1.eats_fish(@fishy4)
+    assert_equal(1, @bear_1.stomach.count)
+  end
+
+  def test_roar
+    assert_equal("ROAR!", @bear_1.roar())
+  end
+
+  def test_food_count
+    @bear_1.eats_fish(@fishy3)
+    @bear_1.eats_fish(@fishy2)
+    @bear_1.eats_fish(@fishy4)
+    assert_equal(3, @bear_1.food_count())
+  end
 
 
 

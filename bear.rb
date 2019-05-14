@@ -15,4 +15,13 @@ class Bear
     @stomach << fish
   end
 
+  def roar()
+    return "ROAR!"
+  end
+
+  def food_count()
+    return @stomach.size()
+  end
+
+  
 end

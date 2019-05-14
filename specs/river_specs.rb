@@ -27,6 +27,10 @@ class RiverTest < MiniTest::Test
     assert_equal("The Blue", @river_a.name)
   end
 
+  def test_fish_in_river
+    assert_equal(4, @river_a.fish.size)
+  end
+
   def test_bear_eats_fish
     @river_a.bear_eats_fish(@bear_1, @fishy3)
     @river_a.bear_eats_fish(@bear_1, @fishy2)
